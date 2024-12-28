@@ -1,0 +1,211 @@
+
+:root {
+    --bg-gradient: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+    --text-color: #333;
+    --container-bg: white;
+    --border-color: #ddd;
+    --accent-color: #6c63ff;
+    --progress-color: #6c63ff;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme {
+    --bg-gradient: linear-gradient(135deg, #2e2e42 0%, #1e1e38 100%);
+    --text-color: #333;
+    --container-bg: #f7f7f7;
+    --border-color: #ccc;
+    --accent-color: #9face6;
+    --progress-color: #74ebd5;
+    --shadow-color: rgba(0, 0, 0, 0.6);
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-gradient);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.content {
+    display: flex;
+    align-items: flex-start;
+}
+
+.container {
+    background: var(--container-bg);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 6px 15px var(--shadow-color);
+    width: 700px;
+    text-align: center;
+    min-height: 500px;
+}
+
+.dropzone {
+    border: 2px dashed var(--border-color);
+    padding: 50px;
+    border-radius: 12px;
+    margin: 25px 0;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.dropzone:hover {
+    background: var(--accent-color);
+    color: white;
+}
+
+.convert-btn,
+.download-btn,
+.close-btn {
+    margin: 10px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    background: var(--accent-color);
+    color: white;
+    font-weight: bold;
+}
+
+.progress-container {
+    width: 100%;
+    background: var(--border-color);
+    border-radius: 8px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 10px;
+    width: 0%;
+    background: var(--progress-color);
+    transition: width 0.4s;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: var(--container-bg);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+
+.hidden {
+    display: none;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--accent-color);
+}
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.formats-table {
+    margin-left: 40px;
+    padding: 20px;
+    background: var(--container-bg);
+    box-shadow: 0 6px 15px var(--shadow-color);
+    border-radius: 12px;
+    width: 400px;
+    height: fit-content;
+}
+
+.formats-table h2 {
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid var(--border-color);
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    color: var(--text-color);
+}
+
+th {
+    background: var(--accent-color);
+    color: white;
+}
+
+.left-bottom-hint {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    padding: 10px;
+    border-radius: 8px;
+    width: 180px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    font-size: 0.9rem;
+    z-index: 9999;
+}

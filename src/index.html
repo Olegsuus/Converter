@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>File Converter</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="theme-toggle">
+    <label class="switch">
+        <input type="checkbox" id="themeSwitcher" />
+        <span class="slider"></span>
+    </label>
+</div>
+
+<div class="content">
+    <div class="container">
+        <h1>📂 File Converter</h1>
+        <p>Upload your file and convert it to the desired format.</p>
+
+        <div id="dropzone" class="dropzone">
+            Drag & Drop your file here or click to select
+        </div>
+
+        <input type="file" id="fileInput" style="display: none;" />
+
+        <label for="formatSelect" class="format-label">Convert to:</label>
+        <select id="formatSelect" class="format-select">
+            <option value="pdf">PDF</option>
+            <option value="docx">DOCX</option>
+        </select>
+
+        <button id="convertBtn" class="convert-btn">Convert</button>
+
+        <div id="progressContainer" class="progress-container hidden">
+            <div id="progressBar" class="progress-bar"></div>
+        </div>
+    </div>
+
+    <div class="formats-table">
+        <h2>Supported Formats</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Input Format</th>
+                <th>Output Formats</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Pages (.pages)</td>
+                <td>PDF, DOCX</td>
+            </tr>
+            <tr>
+                <td>Numbers (.numbers)</td>
+                <td>PDF</td>
+            </tr>
+            <tr>
+                <td>Keynote (.key)</td>
+                <td>PDF</td>
+            </tr>
+            <tr>
+                <td>DOCX (.docx)</td>
+                <td>PDF</td>
+            </tr>
+            <tr>
+                <td>PDF (.pdf)</td>
+                <td>DOCX</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="left-bottom-hint">
+    <h3>Как конвертировать:</h3>
+    <p>1. Загрузите файл</p>
+    <p>2. Выберите формат</p>
+    <p>3. Нажмите «Convert»</p>
+</div>
+
+
+<div id="modal" class="modal hidden">
+    <div class="modal-content">
+        <h2>🎉 Conversion Complete</h2>
+        <p>Your file has been successfully converted!</p>
+        <a id="downloadBtn" class="download-btn">Download File</a>
+        <button id="closeModal" class="close-btn">Close</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
